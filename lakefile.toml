@@ -9,10 +9,15 @@ relaxedAutoImplicit = false
 weak.linter.mathlibStandardSet = true
 maxSynthPendingDepth = 3
 
+# [[require]]
+# name = "mathlib"
+# scope = "leanprover-community"
+# rev = "v4.28.0"
+
 [[require]]
-name = "mathlib"
-scope = "leanprover-community"
-rev = "v4.28.0"
+name = "quantumInfo"
+git = "https://github.com/Timeroot/Lean-QuantumInfo"
+rev = "main"
 
 [[lean_lib]]
 name = "Qic890"
