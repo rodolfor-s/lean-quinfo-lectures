@@ -1,0 +1,126 @@
+/* @theme solarized-dark-custom */
+/* Based on rose-pine-moon, using Solarized Dark */
+
+@import "default";
+@import "schema";
+@import "structure";
+
+:root {
+  --base:       #002b36; /* background base */
+  --surface:    #073642; /* slightly lighter area backgrounds / panels */
+  --overlay:    #0E1116; /* overlays, code blocks backgrounds, default: 586e75 */
+  --muted:      #657b83; /* comments, less prominent text */
+  --subtle:     #839496; /* list items, secondary text */
+  --text:       #eee8d5; /* main text */
+  
+  --love:       #dc322f; /* red */
+  --gold:       #b58900; /* yellow */
+  --rose:       #cb4b16; /* orange */
+  --pine:       #2aa198; /* cyan/teal */
+  --foam:       #268bd2; /* blue */
+  --iris:       #6c71c4; /* violet */
+  
+  --highlight-low:   #073642;
+  --highlight-muted: #586e7555;/*#586e75*/
+  --highlight-high:  #657b83;/*#0E1116;/*#657b83;*/
+
+  font-family: "IBM Plex Sans", "STIX Two Text", "Helvetica Neue", ui-sans-serif, system-ui, -apple-system;
+  font-weight: initial;
+  background-color: var(--base);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--rose);
+  font-family: "Helvetica Neue";
+}
+h1 {
+  padding-bottom: 2mm;
+  margin-bottom: 4mm;
+}
+
+/* Links */
+a { color: var(--iris); }
+
+/* Header */
+header {
+  font-family: "Helvetica Neue";
+}
+
+/* Footer */
+footer {
+  font-family : "Helvetica Neue";
+}
+
+/* Paragraph text */
+p {
+  /* font-size: 20pt; */
+  /* font-family: "Avenir", "STIX Two Text"; */
+  font-weight: initial;
+  color: var(--text);
+}
+
+/* Other text elements */
+text, strong, mjx-container {
+  color: var(--text);
+}
+strong {
+  font-weight: 800;
+  /* font-family: "Helvetica Neue"; */
+}
+
+/* Lists */
+ul, li {
+  color: var(--text);
+  /* font-size: 20pt; */
+  /* font-family: "Avenir", "STIX Two Text"; */
+}
+
+/* Images */
+/* img {
+  background-color: var(--highlight-low);
+} */
+
+/* section.center { text-align: center } */
+img.avatar { margin: 0 auto; width: 75px; height: 75px; border-radius: 45%; object-fit: cover; }
+
+section.names p {
+  /* font-size: 16pt; */
+  text-align: right;
+  font-family: "Helvetica Neue", ui-sans-serif;
+}
+
+section.names li {
+  font-size: 16pt;
+  text-align: left;
+  list-style-type: "📍 ";
+  font-family: "Helvetica Neue", ui-sans-serif;
+}
+
+/* Code blocks / preformatted */
+marp-pre {
+  background-color: var(--overlay);
+  border-color: var(--highlight-high);
+}
+
+/* Inline code */
+code {
+  color: var(--text);
+  background-color: var(--highlight-muted);
+}
+
+/* Syntax highlighting */
+.hljs-comment     { color: var(--muted); }
+.hljs-attr        { color: var(--foam); }
+.hljs-punctuation { color: var(--subtle); }
+.hljs-string      { color: var(--gold); }
+.hljs-title       { color: var(--foam); }
+.hljs-keyword     { color: var(--pine); }
+.hljs-variable    { color: var(--text); }
+.hljs-literal     { color: var(--rose); }
+.hljs-type        { color: var(--love); }
+.hljs-number      { color: var(--gold); }
+.hljs-built_in    { color: var(--love); }
+.hljs-params      { color: var(--iris); }
+.hljs-symbol      { color: var(--foam); }
+.hljs-meta        { color: var(--muted); }
