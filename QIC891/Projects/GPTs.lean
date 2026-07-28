@@ -1,5 +1,5 @@
 /-
-Tentative root file for Generalized Probabilistic Theories (GPTs)
+Tentative root file for a project on Generalized Probabilistic Theories (GPTs).
 -/
 
 import QuantumInfo.ForMathlib
@@ -14,6 +14,7 @@ variable [Fintype d] [Fintype d₁] [Fintype d₂] [Fintype d₃]
 variable [DecidableEq d] [DecidableEq d₁] [DecidableEq d₂] [DecidableEq d₃]
 
 variable {K : Type*}
+variable {G g : Type*}
 -- variable [Convex ℝ K]
 
 namespace GPTs
@@ -25,7 +26,7 @@ namespace GPTs
 We don't define a state *space*, rather just states as a FinDim real vector
 space V, and aim to show that they are 'closed' under some operations. -/
 @[ext]
-structure GPTState (V : Type*) (d : Type*) [Fintype d] [DecidableEq d] where
+structure State (V : Type*) (d : Type*) [Fintype d] [DecidableEq d] where
   v : V -- (S5 in reference)
   -- nonneg?
   -- normalization?
@@ -42,15 +43,15 @@ the effects are
     not needed.
 2. of codomain `Prob : Type`.
 -/
-structure GPTEffect (d : Type*) [Fintype d] [DecidableEq d] where
+structure Effect (d : Type*) [Fintype d] [DecidableEq d] where
   f : Module.Dual ℝ V
-  prob : ∀ (s : GPTState V d), 0 ≤ f (s.v) ∧ f (s.v) ≤ 1
+  prob : ∀ (s : State V d), 0 ≤ f (s.v) ∧ f (s.v) ≤ 1
 
-/-- should Mixable be given as an instance to `GPTState V d`, or should I follow
+/-- should Mixable be given as an instance to `State V d`, or should I follow
 (S2) in ref. [1]? -/
-instance instMixable : Mixable V (GPTState V d) where
-  to_U := GPTState.v
-  to_U_inj := GPTState.ext
+instance instMixable : Mixable V (State V d) where
+  to_U := State.v
+  to_U_inj := State.ext
   convex := by sorry
   mkT {u} := fun h ↦ ⟨⟨u⟩, rfl⟩
 
@@ -59,5 +60,24 @@ instance instMixable : Mixable V (GPTState V d) where
 https://arxiv.org/pdf/2103.07469#section.2
 https://arxiv.org/pdf/2103.07469#subsection.3.2
 -/
+
+/-- Tentative Definition (Baldi+Marina)
+`φ : Θ → G` (in quantum, usually is `ℝ → U`, for a time continuum) -/
+structure Generator (Θ : Group g) (S : Group G) where
+  φ : Θ → S
+
+/-
+Less generally, in quantum theory, it happens that there exists `Herm(ℋ)` such
+that
+`Herm(ℋ) → ( ℝ → U )`,
+essentially: `H ↦ exp(-i H (_))`.
+And it also occurs that (tentative)
+`Herm(ℋ) → Obs`,
+essentially: `H ↦ H`.
+-/
+
+/-- Tentative Definition (Baldi+Marina)
+... -/
+structure Observable
 
 end GPTs
