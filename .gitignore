@@ -1,5 +1,11 @@
-/.lake
+# vscode
+*.code-workspace
+
+# latex
 anc/
 *.pdf
 *.synctex*
-*.code-workspace
+
+# lean
+/.lake
+/_slides

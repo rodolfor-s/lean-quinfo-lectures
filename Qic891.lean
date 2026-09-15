@@ -1,4 +1,4 @@
-import Qic890.Basic
+import QIC891.Basic
 
 /-! # Quantum Information in Lean --- Lecture course
 -- [the following copies from Lean-QuantumInfo. 19 Mar]
@@ -17,9 +17,9 @@ in roughly their dependency order:
 
 /-
 This is the root file of this repository. It imports the modules from within
-folder `Qic890/` containing the actual content of the repository. It sources
+folder `QIC891/` containing the actual content of the repository. It sources
 that content to external repositories through a single import
-`import Qic890.lean`.
+`import QIC891.lean`.
 
 It should be minimal, containing (besides documentation) only imports.
 -/
