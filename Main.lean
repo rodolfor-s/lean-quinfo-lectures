@@ -9,9 +9,14 @@ open System (FilePath)
 def myExtraCss : CssFile where
   filename := "custom.css"
   contents := ⟨":root {
+                  --r-main-font-size: 32px;
                   --r-accent: #e7ad52;
                   --r-heading-color: var(--r-accent);
                   --r-link-color: #1976d2;
+                }
+                .reveal .slides section {
+                  overflow-y: auto;
+                  max-height: 100%;
                 }
                 .reveal :is(p, li, td, th, blockquote) code {
                   background-color: #c9c9c9;

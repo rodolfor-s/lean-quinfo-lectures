@@ -337,7 +337,7 @@ style="border: 0;
 - Accelerated by Anthropic.
 - [“Sorries are not the hard part”](https://arxiv.org/abs/2606.13925)
 
-## [“On the Navier–Stokes Millennium Prize Problem”](https://openai.com/index/navier-stokes-solution/)
+# [“On the Navier–Stokes Millennium Prize Problem”](https://openai.com/index/navier-stokes-solution/)
 
 Some controversy (15th of September, ~10:30)
 
