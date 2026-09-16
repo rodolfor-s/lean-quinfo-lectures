@@ -1,0 +1,57 @@
+name: Build and Deploy Slides
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deployment at a time; a newer push cancels an in-flight one.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: leanprover/lean-action@v1
+      - name: Build Verso slide decks
+        run: lake exe qic891
+      - name: Generate homepage
+        run: |
+          {
+            echo '<!DOCTYPE html>'
+            echo '<html lang="en"><head><meta charset="utf-8">'
+            echo '<title>QIC891 Lecture Slides, Fall 2026</title></head><body>'
+            echo '<h1>QIC891 Lecture Slides</h1>'
+            echo '<ul>'
+            for dir in _slides/*/; do
+              name="$(basename "$dir")"
+              if [ -f "${dir}index.html" ]; then
+                echo "<li><a href=\"${name}/\">${name}</a></li>"
+              fi
+            done
+            echo '</ul></body></html>'
+          } > _slides/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _slides
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
