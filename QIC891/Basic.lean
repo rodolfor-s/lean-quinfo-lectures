@@ -4,7 +4,6 @@ Starting module file.
 
 import Mathlib.Tactic
 import Mathlib.Topology.Basic
-import QuantumInfo.Finite.MState
 
 -- Check definition of a topological space in mathlib4
 #check TopologicalSpace
