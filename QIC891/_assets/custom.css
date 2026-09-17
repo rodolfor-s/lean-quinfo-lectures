@@ -1,0 +1,91 @@
+:root {
+        --r-main-font-size: 32px;
+        --r-accent: #e7ad52;
+        --r-heading-color: var(--r-accent);
+        --r-link-color: #1976d2;
+        --r-code-font: \"JuliaMono\", monospace;
+    }
+    /* JuliaMono, self-hosted via jsdelivr (pinned to a release
+        so the fonts don't change under us), for its wide math
+        unicode coverage in code. */
+    @font-face {
+        font-family: \"JuliaMono\";
+        src: url(\"https://cdn.jsdelivr.net/gh/cormullion/juliamono@0.63.2/webfonts/JuliaMono-Regular.woff2\") format(\"woff2\");
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: \"JuliaMono\";
+        src: url(\"https://cdn.jsdelivr.net/gh/cormullion/juliamono@0.63.2/webfonts/JuliaMono-Bold.woff2\") format(\"woff2\");
+        font-weight: bold;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: \"JuliaMono\";
+        src: url(\"https://cdn.jsdelivr.net/gh/cormullion/juliamono@0.63.2/webfonts/JuliaMono-RegularItalic.woff2\") format(\"woff2\");
+        font-weight: normal;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: \"JuliaMono\";
+        src: url(\"https://cdn.jsdelivr.net/gh/cormullion/juliamono@0.63.2/webfonts/JuliaMono-BoldItalic.woff2\") format(\"woff2\");
+        font-weight: bold;
+        font-style: italic;
+    }
+    .reveal .slides section {
+        overflow-y: auto;
+        max-height: 100%;
+    }
+    /* Make emphasis more visually distinct than the theme's
+        defaults (bold / italic alone): strong picks up the
+        accent color, em a muted blue-grey. */
+    .reveal strong,
+    .reveal b {
+        color: var(--r-accent);
+    }
+    .reveal em {
+        color: #b0bec5;
+    }
+    /* `code`-style text (not `.math` inline KaTeX, which shares
+        the same <code> tag): green, backtick-wrapped, same style
+        in headers as in regular text. */
+    .reveal :is(h1, h2, h3, h4, h5, h6, p, li, td, th, blockquote) code:not(.math) {
+        color: #66bb6a;
+    }
+    .reveal :is(h1, h2, h3, h4, h5, h6, p, li, td, th, blockquote) code:not(.math)::before,
+    .reveal :is(h1, h2, h3, h4, h5, h6, p, li, td, th, blockquote) code:not(.math)::after {
+        content: \"`\";
+    }
+    .reveal .controls {
+        color: var(--r-accent);
+        opacity: 0.25;
+    }
+    .reveal .progress {
+        color: var(--r-accent);
+    }
+    .reveal .slide-number {
+        font-size: 28px;
+        font-weight: bold;
+        font-family: inherit;
+        color: #1a1a1a;
+        background-color: var(--r-accent);
+        padding: 6px 16px;
+        border-radius: 8px;
+        opacity: 1;
+    }
+    /* Bigger fontsize for ```code blocks```.
+        `!important` is needed because custom.css loads
+        before lib/slides-highlight.css and lib/panel.css, whose
+        rules share the same selector specificity.
+        `.info-panel`
+        is the hover-info side panel shown next to `-panel` Lean
+        blocks. It's a separate element from the code box. */
+    .reveal code.hl.lean.block,
+    .reveal pre:not(.code-with-panel pre),
+    .reveal .info-panel {
+        font-size: 1.0em !important;
+    }
+    .reveal .r-hstack > .col {
+        flex: 1 1 0;
+        min-width: 0;
+    }
