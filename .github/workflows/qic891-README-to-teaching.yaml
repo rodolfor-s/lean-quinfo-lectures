@@ -1,0 +1,64 @@
+name: QIC891-README-to-teaching
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout QIC891
+        uses: actions/checkout@v4
+
+      - name: Checkout website repo
+        uses: actions/checkout@v4
+        with:
+          repository: rodolfor-s/rodolfor-s.github.io
+          token: ${{ secrets.WEBSITE_SYNC_TOKEN }}
+          path: website
+
+      - name: Sync marked block into `teaching.md`
+        run: |
+          python3 - <<'EOF'
+          import re
+
+          START = "<!-- QIC891-README:START -->"
+          END = "<!-- QIC891-README:END -->"
+
+          with open("README.md") as f:
+              readme_block = f.read()
+
+          m = re.search(re.escape(START) + r"(.*?)" + re.escape(END), readme_block, re.DOTALL)
+          if not m:
+              raise SystemExit("Sync markers not found in README.md")
+          body = m.group(1).strip()
+
+          target_path = "website/_pages/teaching.md"
+          with open(target_path) as f:
+              target = f.read()
+
+          pattern = re.compile(re.escape(START) + r".*?" + re.escape(END), re.DOTALL)
+          if not pattern.search(target):
+              raise SystemExit("Sync markers not found in teaching.md")
+
+          pattern.sub(lambda _: f"{START}\n{body}\n{END}", target)
+
+          with open(target_path, "w") as f:
+              f.write(updated)
+          EOF
+
+      - name: Commit and push
+        working-directory: website
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _pages/teaching.md
+          if git diff --cached --quiet; then
+            echo "No changes to sync"
+            exit 0
+          fi
+          git commit -m "Sync teaching page from QIC891 README"
+          git push
