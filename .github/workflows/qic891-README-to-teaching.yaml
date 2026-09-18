@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - README.md
+      - .github/workflows/qic891-README-to-teaching.yaml
 
 jobs:
   sync:
