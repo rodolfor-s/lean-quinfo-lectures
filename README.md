@@ -3,9 +3,9 @@
 ## Lecture course
 
 **Iteration:** *Selected Advanced Topics in Quantum Information*, QIC 891, Fall 2026.
+**Website:** https://rodolfor-s.github.io/teaching/
 
 <!-- QIC891-README:START -->
-**Website:** https://rodolfor-s.github.io/teaching/
 
 ### Logistics
 

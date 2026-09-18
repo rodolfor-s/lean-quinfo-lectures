@@ -6,6 +6,7 @@ on:
     paths:
       - README.md
       - .github/workflows/qic891-README-to-teaching.yaml
+  workflow_dispatch:
 
 jobs:
   sync:
