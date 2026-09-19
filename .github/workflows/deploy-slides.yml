@@ -1,9 +1,27 @@
 name: Build and Deploy Slides
 
 on:
+  # Only run when something that feeds the slide build changes
+  # (not, e.g., `README.md` or `syllabus.tex`).
   push:
     branches: [main]
+    paths:
+      - QIC891/** # lecture sources and `_assets/`
+      - Main.lean # deck list and config
+      - QIC891.lean
+      - lakefile.toml
+      - lake-manifest.json
+      - lean-toolchain
+      - .github/workflows/deploy-slides.yml
   pull_request:
+    paths:
+      - QIC891/**
+      - Main.lean
+      - QIC891.lean
+      - lakefile.toml
+      - lake-manifest.json
+      - lean-toolchain
+      - .github/workflows/deploy-slides.yml
   workflow_dispatch:
 
 permissions:

@@ -1,8 +1,30 @@
 # Lean-verified Quantum Information Theory
 
-## Lecture course
+## Repository
 
-**Iteration:** *Selected Advanced Topics in Quantum Information*, QIC 891, Fall 2026.
+Lean source code for educational demonstration and lecture slides. The lecture course details below are mirrored to the website.
+
+- [`QIC891/`](QIC891/): Folder Lean demonstration files, lecture slides, and projects.
+- [`Main.lean`](Main.lean): Entry point of the `qic891` executable, compiling slides into `_slides/`.
+
+### Getting started
+
+Lean is fixed to `v4.33.0` in `lean-toolchain`. Install it with `elan`.
+
+You may clone the repository with `git clone <repo-web-url>` (see green `<> Code` button near the top).
+
+Then run
+```sh
+lake exe cache get
+lake build
+```
+to download pre-compiled files (see `import`), and to build them.
+
+To build slides locally, run [script `./lake-build-qic891+serve-slides.sh`](./lake-build-qic891+serve-slides.sh) with optional `lecture1`, `lecture2`, variables (so you don't need to recompile everything every time). Slides are served locally to `http://127.0.0.1:8891`, that you can access on your web browser. Otherwise, slides are built and deployed on every push to `main` to a webpage (see below).
+
+## *Selected Advanced Topics in Quantum Information*, QIC 891
+
+**Iteration:** Fall 2026.
 **Website:** https://rodolfor-s.github.io/teaching/
 
 <!-- QIC891-README:START -->
@@ -22,7 +44,7 @@ Researchers of every background are welcomed to join, including non-QI researche
 
 > I also highly recommend checking out the 2nd module on [Entanglement theory for quantum systems described by von Neumann algebras](https://lauritz-van-luijk.github.io/teaching), designed by [Lauritz van Luijk](https://lauritz-van-luijk.github.io/).
 
-## Course Overview
+## Course overview
 
 ***Description***
 
@@ -45,11 +67,11 @@ Learn the ability
 - to reason about mathematics using code,
 - to understand the role of logical verification and its significance in today's mathematics research landscape.
 
-### Lecture plans
+## Lecture schedule
 
 The following topics are tentative. I may adapt them based on our progress and interests from the audience.
 
-#### 1st Week
+### Week 1 (15 & 17 Sep)
 - [x] **Lecture 1, 15 Sep:** Motivation, formal verification and proofs, Lean and its foundations
     - What is formal verification and why does it matter for mathematics or physics
     - Autoformalization, and more notes on the role of AI in physics
@@ -67,7 +89,7 @@ The following topics are tentative. I may adapt them based on our progress and i
     - ~~Introduction to Mathlib: navigating the library, finding lemma~~
     - ~~Lab: Proving elementary lemmas about sets and function~~
 
-#### 2nd Week
+### Week 2 (22 & 24 Sep)
 - **Lecture 3, 22 Sep:** Matrix algebra in Mathlib
     - Vector spaces and linear maps in Mathlib (`LinearMap`, `Subspace`)
     - Inner product spaces and Hilbert spaces (`InnerProductSpace`, `EuclideanSpace`, and more)
@@ -79,7 +101,7 @@ The following topics are tentative. I may adapt them based on our progress and i
     - Tensor products (`TensorProduct`)
     <!-- - Lab: Defining the Bell states and verifying their properties -->
 
-#### 3rd Week
+### Week 3 (29 Sep & 01 Oct)
 - **Lecture 5, 29 Sep:** More quantum information, Generalized Quantum Stein's Lemma.
     - Density matrices as positive semidefinite operators with unit trace
     - Completely positive trace-preserving (CPTP) maps
@@ -89,7 +111,7 @@ The following topics are tentative. I may adapt them based on our progress and i
     - Discussion: current state of quantum information formalization in Mathlib and open problems
     - Resources for going further (e.g., Physlib, Quantumlib efforts, research frontier)
 
-### More resources & studying materials
+## External resources
 
 - Lean prover community website. Full of resources, including books, games, and more
   - <https://leanprover-community.github.io/>
@@ -115,7 +137,7 @@ The following topics are tentative. I may adapt them based on our progress and i
   - Quantum Information channel <https://leanprover.zulipchat.com/#narrow/channel/508986-Quantum-information/>
   - Physlib channel <https://leanprover.zulipchat.com/#narrow/channel/479953-Physlib/>
 
-### Assessment & Project suggestions
+## Assessment & project suggestions
 
 A final project that ties together Lean with quantum information and/or physics.
 
