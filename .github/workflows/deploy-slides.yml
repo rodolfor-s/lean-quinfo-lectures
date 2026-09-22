@@ -44,19 +44,32 @@ jobs:
         run: lake exe qic891
       - name: Generate homepage
         run: |
+          css="$(cat QIC891/_assets/listing.css)"
           {
             echo '<!DOCTYPE html>'
-            echo '<html lang="en"><head><meta charset="utf-8">'
-            echo '<title>QIC891 Lecture Slides, Fall 2026</title></head><body>'
-            echo '<h1>QIC891 Lecture Slides</h1>'
+            echo '<html lang="en">'
+            echo '<head>'
+            echo '<meta charset="utf-8">'
+            echo '<meta name="viewport" content="width=device-width, initial-scale=1">'
+            echo '<title>QIC891 Lecture Slides, Fall 2026</title>'
+            echo "<style>${css}</style>"
+            echo '</head>'
+            echo '<body>'
+            echo '<main>'
+            echo '<h1><span class="label">QIC891</span>Lecture Slides</h1>'
             echo '<ul>'
             for dir in _slides/*/; do
               name="$(basename "$dir")"
               if [ -f "${dir}index.html" ]; then
-                echo "<li><a href=\"${name}/\">${name}</a></li>"
+                label="$(echo "$name" | sed -E 's/^lecture([0-9]+)$/Lecture \1/; s/-/ /g' \
+                  | awk '{for (i = 1; i <= NF; i++) $i = toupper(substr($i, 1, 1)) substr($i, 2)}1')"
+                echo "<li class=\"dir\"><a href=\"${name}/\">${label}</a></li>"
               fi
             done
-            echo '</ul></body></html>'
+            echo '</ul>'
+            echo '</main>'
+            echo '</body>'
+            echo '</html>'
           } > _slides/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

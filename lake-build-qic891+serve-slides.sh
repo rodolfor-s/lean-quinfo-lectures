@@ -12,7 +12,7 @@ PORT=8891
 # Print usage and exit when asked for help.
 if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
   echo "Usage: $0 [deck ...]"
-  echo "  deck: lecture1, lecture2, ..., verso-examples"
+  echo "  deck: lecture1, lecture2, ..., verso-ex"
   echo "  With no args, compiles all slide decks; otherwise only the named ones."
   exit 0
 fi
@@ -32,17 +32,3 @@ lake exe qic891 "$@"
 # Presently serves to port $PORT suggestive of
 # the QIC 891 code for lectures.
 lake exe verso-serve _slides/ --port "$PORT" --strict-port # &
-# server_pid=$!
-# trap "kill $server_pid 2>/dev/null" EXIT INT TERM
-
-# # Opens address in independent Firefox anonymous window, unless already open.
-# read -q "REPLY?Open in a new Firefox anonymous window? [y/n] " || true
-# echo
-# if [[ "$REPLY" == "y" ]]; then
-#   open -na Firefox --args --private-window "http://127.0.0.1:${PORT}/"
-# fi
-
-# # Prints the address so it can be clicked/opened manually if needed.
-# echo "Slides served at: http://127.0.0.1:${PORT}/"
-
-# wait $server_pid
