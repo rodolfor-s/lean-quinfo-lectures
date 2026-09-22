@@ -61,7 +61,7 @@ https://arxiv.org/pdf/2103.07469#section.2
 https://arxiv.org/pdf/2103.07469#subsection.3.2
 -/
 
-/-- Tentative Definition (Baldi+Marina)
+/-- Tentative Definition
 `φ : Θ → G` (in quantum, usually is `ℝ → U`, for a time continuum) -/
 structure Generator (Θ : Group g) (S : Group G) where
   φ : Θ → S
@@ -76,7 +76,7 @@ And it also occurs that (tentative)
 essentially: `H ↦ H`.
 -/
 
-/-- Tentative Definition (Baldi+Marina)
+/-- Tentative Definition
 ... -/
 structure Observable
 

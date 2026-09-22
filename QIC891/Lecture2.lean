@@ -54,7 +54,7 @@ vertical := some true
   - Next Thursday, 24th, and the last Thursday, 1st Oct
 - Time Room
   - Next Tuesday, 29th
-- PSI Room Office hours: 12am to 1pm
+- PSI Room Office hours: 12pm to 1pm
 
 ## Compiled Lecture 1
 

@@ -65,7 +65,7 @@ Quantumlib/Physlib: ~3 min
 Kernel trust + LKA arena: ~10 min
 Kernel soundness/completeness + LKA tutorial: ~8 min
 Two postmortems (dense quotes, embedded blog iframes): ~20 min
-AI/autoformalization section (FLT ×2, Navier–Stokes): ~12 min
+AI/autoformalization section (FLT ×2, Navier-Stokes): ~12 min
 :::
 
 # Maths under a different guise
@@ -337,7 +337,7 @@ style="border: 0;
 - Accelerated by Anthropic.
 - [“Sorries are not the hard part”](https://arxiv.org/abs/2606.13925)
 
-# [“On the Navier–Stokes Millennium Prize Problem”](https://openai.com/index/navier-stokes-solution/)
+# [“On the Navier-Stokes Millennium Prize Problem”](https://openai.com/index/navier-stokes-solution/)
 
 Some controversy (15th of September, ~10:30)
 
