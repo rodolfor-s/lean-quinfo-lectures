@@ -146,3 +146,11 @@ A final project that ties together Lean with quantum information and/or physics.
 🚧 *coming soon*
 
 <!-- QIC891-README:END -->
+
+## Use of AI
+
+This repository is built with assistance of Claude Code (model Sonnet 5, by Anthropic). Use of AI lies in help with planning, prose editing, HTML and CSS files, and Verso-style markup syntax. Lean code is written partly by me, and partly co-authored by Claude after discussions and review.
+
+## LICENSE
+
+This repository is licensed under the Apache 2.0. See file LICENSE for details.
