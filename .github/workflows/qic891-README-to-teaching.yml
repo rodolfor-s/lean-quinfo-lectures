@@ -1,0 +1,30 @@
+name: QIC891-README-to-teaching
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - .github/workflows/qic891-README-to-teaching.yml
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout QIC891
+        uses: actions/checkout@v4
+
+      - name: Checkout website repo
+        uses: actions/checkout@v4
+        with:
+          repository: rodolfor-s/rodolfor-s.github.io
+          token: ${{ secrets.WEBSITE_SYNC_TOKEN }}
+          path: website
+
+      - name: Sync marked block into `teaching.md`
+        run: .github/scripts/sync-readme-to-teaching.py
+
+      - name: Commit and push
+        working-directory: website
+        run: ../.github/scripts/commit-and-push-teaching.sh

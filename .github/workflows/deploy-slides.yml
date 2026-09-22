@@ -2,7 +2,7 @@ name: Build and Deploy Slides
 
 on:
   # Only run when something that feeds the slide build changes
-  # (not, e.g., `README.md` or `syllabus.tex`).
+  # (not, e.g., `README.md`).
   push:
     branches: [main]
     paths:
@@ -13,6 +13,8 @@ on:
       - lake-manifest.json
       - lean-toolchain
       - .github/workflows/deploy-slides.yml
+      - .github/scripts/generate-index-page.sh
+      - .github/scripts/assets/**
   pull_request:
     paths:
       - QIC891/**
@@ -22,6 +24,8 @@ on:
       - lake-manifest.json
       - lean-toolchain
       - .github/workflows/deploy-slides.yml
+      - .github/scripts/generate-index-page.sh
+      - .github/scripts/assets/**
   workflow_dispatch:
 
 permissions:
@@ -42,35 +46,8 @@ jobs:
       - uses: leanprover/lean-action@v1
       - name: Build Verso slide decks
         run: lake exe qic891
-      - name: Generate homepage
-        run: |
-          css="$(cat QIC891/_assets/listing.css)"
-          {
-            echo '<!DOCTYPE html>'
-            echo '<html lang="en">'
-            echo '<head>'
-            echo '<meta charset="utf-8">'
-            echo '<meta name="viewport" content="width=device-width, initial-scale=1">'
-            echo '<title>QIC891 Lecture Slides, Fall 2026</title>'
-            echo "<style>${css}</style>"
-            echo '</head>'
-            echo '<body>'
-            echo '<main>'
-            echo '<h1><span class="label">QIC891</span>Lecture Slides</h1>'
-            echo '<ul>'
-            for dir in _slides/*/; do
-              name="$(basename "$dir")"
-              if [ -f "${dir}index.html" ]; then
-                label="$(echo "$name" | sed -E 's/^lecture([0-9]+)$/Lecture \1/; s/-/ /g' \
-                  | awk '{for (i = 1; i <= NF; i++) $i = toupper(substr($i, 1, 1)) substr($i, 2)}1')"
-                echo "<li class=\"dir\"><a href=\"${name}/\">${label}</a></li>"
-              fi
-            done
-            echo '</ul>'
-            echo '</main>'
-            echo '</body>'
-            echo '</html>'
-          } > _slides/index.html
+      - name: Generate index page
+        run: .github/scripts/generate-index-page.sh
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
