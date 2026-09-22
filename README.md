@@ -24,8 +24,8 @@ To build slides locally, run [script `./lake-build-qic891+serve-slides.sh`](./la
 
 ## *Selected Advanced Topics in Quantum Information*, QIC 891
 
-**Iteration:** Fall 2026.
-**Website:** https://rodolfor-s.github.io/teaching/
+**Iteration**: Fall 2026.  
+**Website**: https://rodolfor-s.github.io/teaching/.  
 
 <!-- QIC891-README:START -->
 
@@ -149,8 +149,8 @@ A final project that ties together Lean with quantum information and/or physics.
 
 ## Use of AI
 
-This repository is built with assistance of Claude Code (model Sonnet 5, by Anthropic). Use of AI lies in help with planning, prose editing, HTML and CSS files, and Verso-style markup syntax. Lean code is written partly by me, and partly co-authored by Claude after discussions and review.
+This repository is built with assistance of Claude Code by Anthropic. Use of AI lies in help with planning, prose editing, HTML and CSS files, and Verso-style markup syntax. Lean code is written by me with assistance by Claude. Standards for AI attribution follow suggestions by the [Leiden Declaration on Artificial Intelligence and Mathematics](https://doi.org/10.5281/zenodo.20302944) and the [Linux Kernel AI Coding Assistants guidance page](https://docs.kernel.org/process/coding-assistants.html#attribution).
 
 ## LICENSE
 
-This repository is licensed under the Apache 2.0. See file LICENSE for details.
+This repository is licensed under the Apache 2.0. [See file LICENSE for details.](https://github.com/rodolfor-s/lean-quinfo-lectures?tab=Apache-2.0-1-ov-file)
