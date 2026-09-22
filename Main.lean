@@ -2,6 +2,7 @@ import VersoSlides
 
 import QIC891.Lecture1 -- so `%doc` below finds the module
 import QIC891.Lecture2
+import QIC891.Lecture3
 
 open VersoSlides
 open Verso.Doc (Part)
@@ -29,6 +30,7 @@ def buildSlideDeck
 def deckSpecs : List (String × Part Slides × FilePath) := [
   ("lecture1", (%doc QIC891.Lecture1), "_slides/lecture1"),
   ("lecture2", (%doc QIC891.Lecture2), "_slides/lecture2"),
+  ("lecture3", (%doc QIC891.Lecture3), "_slides/lecture3"),
 ]
 
 /-- With no args, builds every deck; otherwise only the named ones
