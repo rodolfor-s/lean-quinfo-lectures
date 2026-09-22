@@ -1,6 +1,6 @@
 name = "qic891"
 version = "0.1.0"
-keywords = ["math"]
+keywords = ["math", "quantum-information", "lectures"]
 defaultTargets = ["QIC891"]
 
 [leanOptions]
@@ -32,6 +32,15 @@ rev = "v4.33.0"
 [[lean_lib]]
 name = "QIC891"
 
+# Added so changes to `custom.css` alone
+# are perceived and relevant during build time
+#
+[[input_file]] # declares lake input file targets
+name = "custom_css"
+path = "QIC891/_assets/custom.css"
+text = true
+
 [[lean_exe]]
 name = "qic891"
 root = "Main"
+needs =["@/custom_css"] # uses `name` variable of input files
