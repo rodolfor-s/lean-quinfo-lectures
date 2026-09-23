@@ -141,9 +141,35 @@ The following topics are tentative. I may adapt them based on our progress and i
 
 A final project that ties together Lean with quantum information and/or physics.
 
-***Project suggestions***
+### Library-contribution suggestions
 
-🚧 *coming soon*
+Projects aimed at concrete and more targeted proofs can be found in Physlib as well as in the QuantumInfo sublibrary. See below a set of resources for you to find how to contribute. Reach out to me for planning around what exactly to do.
+
+- See **[Getting started](https://physlib.io/getting-started)** and **[Get involved](https://physlib.io/get-involved)** onboarding pages for new contributors.
+- **[Open issues](https://github.com/leanprover-community/physlib/issues)** in Github are results of interest, tagged `good first issue`, `help-wanted`, `API` (more structural than theorem-proving-focused), and `formalization` (a specific theorem requested for formalization).
+- **[Project-wide TODO list for Physlib](https://physlib.io/todo)**.
+- **[QuantumInfo TODO](https://github.com/leanprover-community/physlib/blob/master/docs/WildeTODO.md)**: formalize Mark Wilde's *Quantum Information Theory*, marking each definition/exercise/theorem as done, stated but unproved, or not yet formalized. “Not yet formalized” are textbook results that fit this project.
+- Contributions are reviewed at two tiers: [**Physlib**](https://github.com/leanprover-community/physlib/tree/master/Physlib) high-standard review, and [**PhyslibAlpha**](https://github.com/leanprover-community/physlib/tree/master/PhyslibAlpha) with a lighter review process.
+
+### Research interest suggestions (by postdocs and visitors at Perimeter)
+
+The aim of the suggestions below is less about having one concluded proof end-to-end, which may be too difficult given the scope of the project and the time available for the course.
+
+Instead, an interested student can try to tackle this problem by developing and proposing a “roadmap” of definitions and theorems, building the infrastructure to allow the formalization of the results below.
+
+**Simon Langenscheidt**: In 3D Euclidean Quantum Gravity, we can traditionally represent the path integral over geometries by a discretised sum over triangulated spacetimes. The geometries then are labels attached to the triangulations, and the sum is referred to as a state sum or spin foam model. The most well understood one is the Turaev-Viro model, which has the special property of giving a triangulation invariant, finite sum. In this way, it defines the data for a TQFT. Show, along the lines of the paper by [Barrett and Crane](https://doi.org/10.1088/0264-9381/14/8/011), that this model is indeed triangulation independent and finite.
+
+A list from **Yaroslav Herasymenko** (adapted text):
+- **NLTS theorem** ([Anshu–Breuckmann](https://arxiv.org/abs/2206.13228)), which follows from the existence of good quantum LDPC codes. Alternatively, have the implementations of those codes as the target.
+- **Unique-games hardness of approximating Max-Cut beyond the Goemans–Williamson ratio** ([Khot, Kindler, Mossel & O'Donnell](https://doi.org/10.1137/S0097539705447372)).
+- **"Average symmetry" de Finetti theorem** ([Brandão–Harrow](https://arxiv.org/abs/1310.0017)): a rigorous mean-field result with applications to approximation algorithms.
+- **Howe duality** (advanced): a representation-theory-heavy topic.
+
+**Vania Vellucci**: Formal verification of the sharp Buchdahl–Andréasson compactness bound. The theorem is relevant to strong gravity because it gives a sharp, largely matter-model-independent obstruction within General Relativity to constructing arbitrarily compact static horizonless objects. [H. Andréasson](https://doi.org/10.1016/j.jde.2008.05.010), “Sharp bounds on \(2m/r\) of general spherically symmetric static objects”. The original isotropic result is [H. A. Buchdahl](https://doi.org/10.1103/PhysRev.116.1027), “General Relativistic Fluid Spheres,”.
+
+Second suggestion: Formalisation of Whiting’s mode-stability theorem for Kerr. This result is central to black-hole perturbation theory because it proves the stability of sub-extremal rotating black holes. [B. F. Whiting](https://doi.org/10.1063/1.528308), “Mode Stability of the Kerr Black Hole,”.
+
+**Lauritz van Luijk**: If two pure states on a finite-dimensional bipartite system AB purify the same state on A, they are connected by a unitary in B. This fundamental property, called uniqueness of purifications, is not automatic in bipartite systems of commuting von Neumann algebras. It was recently shown that it is equivalent to a much studied property called Haag duality, which asserts that every operator commuting with all operators in A must belong to B. Haag duality appears in countless mathematical physics papers as a technical mathematical assumption. This result, however, shows that it is not a mere technical assumption, it carries concrete quantum information-theoretic meaning. Moreover, the result allows one to disprove Haag duality in concrete physical setups. For instance, [van Luijk, Stottmeister & Wilming](https://link.aps.org/doi/10.1103/d7nm-gx37) does this for a class of bipartitions in anyonic systems in 2D.
 
 <!-- QIC891-README:END -->
 
