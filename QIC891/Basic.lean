@@ -7,6 +7,7 @@ import Mathlib.Topology.Basic
 import Mathlib.NumberTheory.Real.Irrational
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Set.Basic
+import Mathlib.Analysis.InnerProductSpace.PiL2
 
 /-! Demonstration file. -/
 
@@ -147,6 +148,29 @@ example (a b : ℝ)
 
 end Elaborator
 
+section Propositional_Eq
+
+example : 2 + 2 = 4 := rfl
+
+-- Proof irrelevance
+-- Propositional equality
+-- is not baked-in
+-- for terms above Prop
+-- [t-proof-irrel, Fig 1 Lean4Lean](https://arxiv.org/pdf/2403.14064v3#subsection.2.2)
+variable {P : Prop} {proof_of_P : P} {proof'_of_P : P}
+
+example : proof_of_P = proof'_of_P := rfl
+
+-- Compare
+variable {T : Type u} {term_of_T : T} {term'_of_T : T}
+
+#check @Eq.{u} -- the same as `=`
+
+example : term_of_T = term'_of_T := by sorry
+-- `rfl` won't close it!
+
+end Propositional_Eq
+
 section Mathlib_surfing
 
 -- From PatrickMossat/GlimpseOfLean
@@ -154,8 +178,6 @@ def continuous_at (f : ℝ → ℝ) (x₀ : ℝ) :=
 ∀ ε > 0, ∃ δ > 0, ∀ x, |x - x₀| ≤ δ → |f x - f x₀| ≤ ε
 
 #check continuous_at
-
-variable {f : ℝ → ℝ}
 
 #check TopologicalSpace
 #check ContinuousAt
@@ -171,3 +193,14 @@ example {x₀} (f : ℝ → ℝ) (h : ContinuousAt f x₀) : continuous_at f x�
       sorry
 
 end Mathlib_surfing
+
+section Structures_and_classes
+
+structure ket (d : Type*) [Fintype d] where
+  vec : EuclideanSpace ℂ d
+  -- Norm requires a new `import`
+  normalized' : ‖vec‖ = 1
+
+#check Norm
+
+end Structures_and_classes
