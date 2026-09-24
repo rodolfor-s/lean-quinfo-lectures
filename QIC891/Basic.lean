@@ -67,12 +67,14 @@ universe v
 #check Sort 0
 #check Prop
 
-variable {P : Prop} {proof_of_P : P} {proof'_of_P : P}
 -- Proof irrelevance
+variable {P : Prop} {proof_of_P : P} {proof'_of_P : P}
 
 example : proof_of_P = proof'_of_P := rfl
 
 -- Compare
+-- Propositional equality of terms above Prop
+-- is not baked-in
 variable {T : Type u} {term_of_T : T} {term'_of_T : T}
 
 example : term_of_T = term'_of_T := sorry
@@ -86,7 +88,7 @@ section Sets_vs_types
 variable {x : ℝ}
 #check x -- as declared above, x is of type ℝ
 
--- Type judgment of a `term : type` relation
+-- Type judgment of a `term : type` judgement
 -- is defined to output the `type`
 #check (x : ℝ)
 
@@ -110,7 +112,7 @@ variable {x : ℝ}
 #check x ∈ (Set.univ : Set ℝ)
 -- lives in Mathlib.Data.Set.Defs.lean
 
--- \[TO-DO\] prove that two sets are equal when
+-- /TO-DO/ prove that two sets are equal when
 -- their elements are all equal. Should use
 -- `funext`, `propext`, and thus equality of Prop
 
@@ -145,7 +147,7 @@ example (a b : ℝ)
 
 end Elaborator
 
-section Looking_up_Mathlib
+section Mathlib_surfing
 
 -- From PatrickMossat/GlimpseOfLean
 def continuous_at (f : ℝ → ℝ) (x₀ : ℝ) :=
@@ -168,4 +170,4 @@ example {x₀} (f : ℝ → ℝ) (h : ContinuousAt f x₀) : continuous_at f x�
       unfold continuous_at
       sorry
 
-end Looking_up_Mathlib
+end Mathlib_surfing

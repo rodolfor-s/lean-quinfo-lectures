@@ -32,6 +32,12 @@
         font-weight: bold;
         font-style: italic;
     }
+    @font-face {
+        font-family: "Lora";
+        src: url("https://cdn.jsdelivr.net/fontsource/fonts/lora@5.2.5/latin-400-italic.woff2") format("woff2");
+        font-weight: 400;
+        font-style: italic;
+    }
     .reveal .slides section {
         overflow-y: auto;
         max-height: 100%;
@@ -44,7 +50,9 @@
         color: var(--r-accent);
     }
     .reveal em {
-        color: #b0bec5;
+        font-family: "Lora", "Georgia", serif;
+        font-style: italic;
+        font-size: 1.05em;
     }
     /* `code`-style text
         (not `.math` inline KaTeX, which shares the same <code> tag):
@@ -97,7 +105,7 @@
     .reveal code.hl.lean.block,
     .reveal pre:not(.code-with-panel pre),
     .reveal .info-panel {
-        font-size: 1.0em !important;
+        font-size: xx-large !important;
     }
     .reveal .r-hstack > .col {
         flex: 1 1 0;
