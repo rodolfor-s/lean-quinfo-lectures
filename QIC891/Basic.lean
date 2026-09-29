@@ -3,11 +3,13 @@ Copyright (c) 2026 Rodolfo Reis Soldati. All rights reserved.
 Released under Apache 2.0 license as described in the file LICENSE.
 Authors: Rodolfo Reis Soldati
 -/
+import Mathlib.Tactic.FindSyntax
 import Mathlib.Topology.Basic
 import Mathlib.NumberTheory.Real.Irrational
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Set.Basic
 import Mathlib.Analysis.InnerProductSpace.PiL2
+import QuantumInfo.Operators.Unitary
 
 /-! Demonstration file. -/
 
@@ -199,8 +201,53 @@ section Structures_and_classes
 structure ket (d : Type*) [Fintype d] where
   vec : EuclideanSpace ℂ d
   -- Norm requires a new `import`
+  -- see line 10 in this file
   normalized' : ‖vec‖ = 1
 
-#check Norm
+/- I'm including below one example of a set of function calls to figure how something familiar, here a norm `‖_‖` for an `EuclideanSpace` object,  -/
+
+#check_failure ‖ket.vec‖
+-- `‖_‖` fails to synthetize `Norm` instances
+-- so we look for norm type class instances on objects of type
+-- `EuclideanSpace`
+-- Let's check the `Norm` `class` for
+-- what its instance looks like for `EuclideanSpace`:
+
+variable {d : ℕ}
+#synth Norm (EuclideanSpace ℂ (Fin d))
+-- I'ts a `PiLp.instNorm` instance!
+-- We can then check its definition:
+
+#print PiLp.instNorm
 
 end Structures_and_classes
+
+section Function_types
+
+open MState InnerProductSpace
+
+#print MState.no_cloning
+-- No cloning in (absolutely full) detail;
+-- compare with its Definition.
+-- #print unpacks the tactics and shows the proofs
+-- that they build
+
+#check MState.no_cloning
+-- The statement as defined in the library
+#check @MState.no_cloning
+-- Unpacking no cloning as a function type
+
+variable {d : Type*} [Fintype d] [DecidableEq d]
+variable {ψ φ f : Ket d}
+
+example {U : 𝐔[d × d]}
+  (hlt1 : ⟪MState.pure ψ, pure φ⟫_Prob < (1 : ℝ))
+  (hgt0 : (0 : ℝ) < ⟪MState.pure ψ, pure φ⟫_Prob) :
+    ¬ (
+      U ◃ pure (ψ ⊗ᵠ f) = MState.pure (ψ ⊗ᵠ ψ)
+      ∧
+      U ◃ pure (φ ⊗ᵠ f) = MState.pure (φ ⊗ᵠ φ)
+    ) :=
+      fun ⟨hψ, hφ⟩ ↦ (ne_of_gt hgt0) (no_cloning hψ hφ hlt1)
+
+end Function_types
