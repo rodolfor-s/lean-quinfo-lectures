@@ -36,14 +36,14 @@ variable {h : ℝ → ℝ → ℝ}
 -- input
 -- `#check h f`
 -- output
-/-    Application type mismatch: The argument
-      `f`
-      has type
-      `ℝ → ℝ`
-      but is expected to have type
-      `ℝ`
-      in the application
-      `h f` -/
+/-  Application type mismatch: The argument
+    `f`
+    has type
+    `ℝ → ℝ`
+    but is expected to have type
+    `ℝ`
+    in the application
+    `h f` -/
 #check h (f x) x
 
 variable {h' : (ℝ → ℝ) → ℝ}
@@ -101,12 +101,12 @@ variable {x : ℝ}
 -- Is it unique?
 
 -- #check `x ∈ ℝ`
-/-   #check `x ∈ ℝ` failed to synthesize instance of type
-      class `Membership ℝ Type`
+/-  #check `x ∈ ℝ` failed to synthesize instance of type
+    class `Membership ℝ Type`
 
-      Hint: Type class instance resolution failures can be
-      inspected with the `set_option trace.Meta.synthInstance
-      true` command. #check Membership x (Set ℝ) -/
+    Hint: Type class instance resolution failures can be
+    inspected with the `set_option trace.Meta.synthInstance
+    true` command. #check Membership x (Set ℝ) -/
 
 #check Membership ℝ (Set ℝ)
 
@@ -204,7 +204,9 @@ structure ket (d : Type*) [Fintype d] where
   -- see line 10 in this file
   normalized' : ‖vec‖ = 1
 
-/- I'm including below one example of a set of function calls to figure how something familiar, here a norm `‖_‖` for an `EuclideanSpace` object,  -/
+/- I'm including below one example of a set of function calls to figure how
+something familiar, here a norm `‖_‖` for an `EuclideanSpace` object, looks
+under the hood in Lean -/
 
 #check_failure ‖ket.vec‖
 -- `‖_‖` fails to synthetize `Norm` instances
@@ -227,7 +229,7 @@ section Function_types
 open MState InnerProductSpace
 
 #print MState.no_cloning
--- No cloning in (absolutely full) detail;
+-- No-cloning in (absolutely full) detail;
 -- compare with its Definition.
 -- #print unpacks the tactics and shows the proofs
 -- that they build
