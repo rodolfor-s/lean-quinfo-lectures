@@ -1,8 +1,5 @@
 /-
-Initial file to showcase Lean to students.
-
-Initial thoughts: I should write about the Lean viewport in VSCode, basic
-environments, tactics, types (e.g. in contrast to sets).
+Slides for Lecture 1, to take place on 2026-09-15
 -/
 
 -- see https://github.com/leanprover/verso-slides#slide-metadata for slide
@@ -23,10 +20,6 @@ open VersoSlides
 - Lecture 1, 2026-09-15
 
 ## {attr (style := "font-size: 4em;")}[$`\Gamma ⊢ t : T`]
-
-:::notes
-Speaker notes
-:::
 
 # Lecture logistics
 
@@ -50,8 +43,7 @@ vertical := some true
 - Overarching Goal: Make a contributing Pull Request to the Github repository of Physlib, Quantumlib, Lean-QuantumInfo, or Mathlib.
     - Meaning: your work is also an actual citable contribution!
     - (Of course, it will not be judged by whether the PR was accepted)
-- I'm compiling and should have a list of suggestions in the webpage available
-soon
+- A list of suggestions will be posted on the course webpage
     - This includes non-QI options
     - Projects that are not exactly formalization are also welcome. Maybe you
     want to build your own kernel? _Let's teach each other!_
@@ -117,11 +109,6 @@ already defined *in one of the slides*; the compilation returned
 the error "variable already defined"!
 :::
 
-:::notes
-Mention Mathematica, Sympy.
-How is Lean different?
-:::
-
 # Theorem-proving code
 
 ```lean
@@ -137,7 +124,7 @@ example (a b : ℝ) : (a + b)^2 = a^2 + 2*a*b + b^2 := by ring
 -- Or a numeric check
 #reduce (2 : ℕ) + 2 -- should print 4
 
-/- from PatrickMossat/GlimpseOfLean -/
+/- from PatrickMassot/GlimpseOfLean -/
 def continuous_at (f : ℝ → ℝ) (x₀ : ℝ) :=
 ∀ ε > 0, ∃ δ > 0, ∀ x, |x - x₀| ≤ δ → |f x - f x₀| ≤ ε
 
@@ -213,7 +200,7 @@ style="border: 0;
 Wrongly-accepted invalid proofs : FALSE POSITIVE : UN-SOUNDNESS
 Wrongly-rejected valid proofs : FALSE NEGATIVE : inCOMPLETENESS
 - https://github.com/leanprover/lean-kernel-arena/tree/master/tutorial#tutorial-test-cases
-- (CLAUDE) Priority order: first by wrongly-accepted invalid
+- Priority order: first by wrongly-accepted invalid
 proofs, then by wrongly-rejected valid proofs, then by time on the
 mathlib test, then by number of declined tests ---
 i.e. soundness first, completeness second, speed third
@@ -339,7 +326,11 @@ style="border: 0;
 
 # [“On the Navier-Stokes Millennium Prize Problem”](https://openai.com/index/navier-stokes-solution/)
 
-Some controversy (15th of September, ~10:30)
+Reported controversy (as of 15th of September, ~10:30):
+- [Nature news: “Who gets credit in the AI era? OpenAI maths bombshell sparks debate”](https://www.nature.com/articles/d41586-026-02910-w)
+- [Nature editorial: “AI companies must work with the research community to protect attribution”](https://www.nature.com/articles/d41586-026-02886-7)
+- Wikipedia: [Navier-Stokes priority controversy](https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_priority_controversy)
 
-- [OpenAI's solutions](https://github.com/openai/NavierStokesAndEuler)
+And the solutions themselves:
+- [OpenAI's solution](https://github.com/openai/NavierStokesAndEuler)
 - [Tristan Buckmaster and Levent Alpöge's solution](https://github.com/tristanbuckmaster/fluid_lean)

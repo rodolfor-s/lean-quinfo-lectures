@@ -76,7 +76,11 @@ style="border: 0;
 - *Git* basics
 - Lean installation on *VSCode*
 - Using Lean, and the Lean _InfoView_ in VSCode
-- Reading basic syntax; continuing from [Lecture 1](http://127.0.0.1:8891/lecture2/#/1/1)
+- Reading basic syntax; continuing from [Lecture 1](https://rodolfor-s.github.io/lean-quinfo-lectures/lecture1/)
+
+:::notes
+The link to Lecture 1 above will work locally
+:::
 
 # Version control with Git
 
@@ -95,7 +99,7 @@ vertical := some true
 - `git` is a version control software
   - Documentation: [https://git-scm.com/](https://git-scm.com/)
   - To learn more:
-    - [Erik's lectures for PSI](https://pirsa.org/26090018)
+    - [Erik Schnetter's lectures for PSI](https://pirsa.org/26090018)
     - [Learning resources](https://git-scm.com/learn)
 - [Github](https://github.com/) is a platform that _uses_ and _integrates_
 `git` with other services:
@@ -193,7 +197,7 @@ vertical := some true
 
 - VSCode: not necessary, but sufficient
 - Provides basic
-  - `git` and [Github](github.com) support,
+  - `git` and [Github](https://github.com) support,
   - extensions for both,
   - and extension for Lean
 - Graphical interface and automatic for all of these tools

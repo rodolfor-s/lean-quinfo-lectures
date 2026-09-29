@@ -83,7 +83,7 @@ example
 So take `p := fun q => c And q` to be true (`p a`).
 Then assume `a = b`.
 Lean can substitute `a` for `b` such that `p b` holds.
-If `p(a)` holds, then `a` individually does.
+If this `p(a)` holds, then `a` individually does.
 Because `a = b`, `b` also holds.
 So `p b := c And b` must also hold. -/
 ```

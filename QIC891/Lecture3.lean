@@ -19,10 +19,6 @@ open VersoSlides
 
 *{attr (style := "font-size: 6em;")}[$`\Gamma ⊢ t : T`]*
 
-:::notes
-...
-:::
-
 # Questions we've had so far
 
 %%%
@@ -103,13 +99,14 @@ universe u
   between terms of a type and a set of that type.
 
 ```lean
+-- The following will not compile
 -- #check `x ∈ ℝ`
--- #check `x ∈ ℝ` failed to synthesize instance of type
---   class `Membership ℝ Type`
+--  #check `x ∈ ℝ` failed to synthesize instance of type
+--  class `Membership ℝ Type`
 
---   Hint: Type class instance resolution failures can be
---   inspected with the `set_option trace.Meta.synthInstance
---   true` command. #check Membership x (Set ℝ)
+--  Hint: Type class instance resolution failures can be
+--  inspected with the `set_option trace.Meta.synthInstance
+--  true` command. #check Membership x (Set ℝ)
 
 #check Membership ℝ (Set ℝ)
 

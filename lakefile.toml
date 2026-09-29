@@ -14,10 +14,10 @@ name = "verso-slides"
 scope = "leanprover"
 rev = "v4.33.0"
 
-[[require]]
-name = "quantumInfo"
-git = "https://github.com/Timeroot/Lean-QuantumInfo"
-rev = "main"
+# [[require]]
+# name = "quantumInfo"
+# git = "https://github.com/Timeroot/Lean-QuantumInfo"
+# rev = "main"
 
 [[require]]
 name = "Physlib"
