@@ -90,26 +90,32 @@ The following topics are tentative. I may adapt them based on our progress and i
     - ~~Lab: Proving elementary lemmas about sets and function~~
 
 ### Week 2 (22 & 24 Sep)
-- **Lecture 3, 22 Sep:** Matrix algebra in Mathlib
-    - Vector spaces and linear maps in Mathlib (`LinearMap`, `Subspace`)
-    - Inner product spaces and Hilbert spaces (`InnerProductSpace`, `EuclideanSpace`, and more)
-    - Matrices, adjoints, and unitarity
-    - Lab: Proving basic properties of linear operators
-- **Lecture 4, 24 Sep:** Quantum mechanics and information theory, `Physlib/QuantumInfo`.
-    - Encoding qubits and quantum states as vectors in `ℂ^n`
-    - `HermitianMat` and unitary operators
-    - Tensor products (`TensorProduct`)
-    <!-- - Lab: Defining the Bell states and verifying their properties -->
+- [x] **Lecture 3, 22 Sep:** Lean coding I
+    - Hierarchy of sorts or types, and propositions
+    - Sets _vs_ types, with a proof of set equality by `funext` and `propext`
+    - ~~Vector spaces and linear maps in Mathlib (`LinearMap`, `Subspace`)~~
+    - ~~Inner product spaces and Hilbert spaces (`InnerProductSpace`, `EuclideanSpace`, and more)~~
+    - ~~Matrices, adjoints, and unitarity~~
+    - ~~Lab: Proving basic properties of linear operators~~
+- [x] **Lecture 4, 24 Sep:** Lean coding II
+    - “Everything has a type”, and metaprogramming
+    - Equality of propositions (`propext`)
+    - Different notions of equality: definitional (`rfl`), propositional, and Boolean (`BEq`)
+    - ~~Encoding qubits and quantum states as vectors in `ℂ^n`~~
+    - ~~`HermitianMat` and unitary operators~~
+    - ~~Tensor products (`TensorProduct`)~~
 
 ### Week 3 (29 Sep & 01 Oct)
-- **Lecture 5, 29 Sep:** More quantum information, Generalized Quantum Stein's Lemma.
-    - Density matrices as positive semidefinite operators with unit trace
-    - Completely positive trace-preserving (CPTP) maps
-    - Partial trace and entanglement
-    <!-- - Lab: Encoding a simple quantum channel and verifying CPTP conditions -->
-- **Lecture 6, 01 Oct:** Outlook.
-    - Discussion: current state of quantum information formalization in Mathlib and open problems
-    - Resources for going further (e.g., Physlib, Quantumlib efforts, research frontier)
+- [x] **Lecture 5, 29 Sep:** More complex mathematical objects
+    - More complex mathematical definitions, e.g. continuity in Mathlib (`ContinuousAt`)
+    - Lean's `structure` and `class` (`CPTPMap`, `HermitianMat`, `MState`, `InnerProductSpace`), and typeclass resolution
+    - ~~Density matrices as positive semidefinite operators with unit trace~~
+    - ~~Completely positive trace-preserving (CPTP) maps~~
+    - ~~Partial trace and entanglement~~
+- [x] **Lecture 6, 01 Oct:** Function types and outlook
+    - Picking up from past lecture: `structure`, `class`, and detailed mathematical objects
+    - Function types and the *no-cloning theorem*: dependent function types, and the universal quantifier `∀`
+    - Outlook
 
 ## External resources
 
