@@ -16,6 +16,10 @@ open VersoSlides
 
 # `L∃∀N`-verified Quantum Information Theory
 
+%%%
+state := some "lead"
+%%%
+
 - *RRS* to QIC891, Fall 2026
 - Lecture 1, 2026-09-15
 

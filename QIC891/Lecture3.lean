@@ -14,6 +14,10 @@ open VersoSlides
 
 # {attr (style := "font-family: var(--r-code-font);")}[L∃∀N]-verified Quantum Information Theory
 
+%%%
+state := some "lead"
+%%%
+
 - RRS to QIC891, Fall 2026
 - Lecture 3, 2026-09-22
 

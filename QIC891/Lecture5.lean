@@ -15,6 +15,10 @@ set_option linter.hashCommand false
 
 # {attr (style := "font-family: var(--r-code-font);")}[L∃∀N]-verified Quantum Information Theory
 
+%%%
+state := some "lead"
+%%%
+
 - RRS to QIC891, Fall 2026
 - Lecture 5, 2026-09-29
 

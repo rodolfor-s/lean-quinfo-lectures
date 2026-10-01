@@ -5,6 +5,8 @@ import QIC891.Lecture2
 import QIC891.Lecture3
 import QIC891.Lecture4
 import QIC891.Lecture5
+import QIC891.Lecture6
+import QIC891.VersoExamples
 
 open VersoSlides
 open Verso.Doc (Part)
@@ -35,6 +37,8 @@ def deckSpecs : List (String × Part Slides × FilePath) := [
   ("lecture3", (%doc QIC891.Lecture3), "_slides/lecture3"),
   ("lecture4", (%doc QIC891.Lecture4), "_slides/lecture4"),
   ("lecture5", (%doc QIC891.Lecture5), "_slides/lecture5"),
+  ("lecture6", (%doc QIC891.Lecture6), "_slides/lecture6"),
+  ("verso-ex", (%doc QIC891.VersoExamples), "_slides/verso-examples"),
 ]
 
 /-- With no args, builds every deck; otherwise only the named ones

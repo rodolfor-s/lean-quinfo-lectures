@@ -5,9 +5,8 @@
         --r-link-color: #64b5f6;
         --r-code-font: "JuliaMono", monospace;
     }
-    /* JuliaMono, self-hosted via jsdelivr (pinned to a release
-        so the fonts don't change under us), for its wide math
-        unicode coverage in code. */
+    /* JuliaMono, self-hosted via jsdelivr (pinned to a release so the fonts
+        don't change under us), for its wide math unicode coverage in code. */
     @font-face {
         font-family: "JuliaMono";
         src: url("https://cdn.jsdelivr.net/gh/cormullion/juliamono@0.63.2/webfonts/JuliaMono-Regular.woff2") format("woff2");
@@ -38,13 +37,80 @@
         font-weight: 400;
         font-style: italic;
     }
-    .reveal .slides section {
+    /* Last-resort fallback: scroll overflowing slides instead of clipping
+        them. `:not(.stack)` skips vertical-slide wrappers, so nested slides
+        don't get two scroll containers. Prefer splitting the slide or the
+        `small` state below. */
+    .reveal .slides section:not(.stack) {
         overflow-y: auto;
         max-height: 100%;
     }
-    /* Make emphasis more visually distinct than the theme's
-        defaults (bold / italic alone): strong picks up the
-        accent color, em a muted blue-grey. */
+    /* ---- Marp-like layout ---- Left align slide headers, text */
+    .reveal .slides {
+        text-align: left;
+    }
+    /* Side margins: Increase margins */
+    .reveal .slides section:not(.stack) {
+        --slide-padding-x: 98px;
+        box-sizing: border-box;
+        padding-left: var(--slide-padding-x);
+        padding-right: var(--slide-padding-x);
+    }
+    /* `reveal.js` sets `r-stretch` elements to an inline width covering the
+        full canvas; cap them to the padded width instead of overflowing
+        sideways. */
+    .reveal .slides section > .r-stretch {
+        max-width: 100%;
+    }
+    .reveal ul,
+    .reveal ol,
+    .reveal dl {
+        display: block;
+    }
+    /* `reveal.js` vstack centers its children as boxes */
+    .reveal .r-vstack {
+        align-items: stretch;
+    }
+    /* GitHub-style quote: full width with a left bar, instead of centered,
+        italic 70%-wide box. */
+    .reveal blockquote {
+        width: auto;
+        margin: var(--r-block-margin) 0;
+        padding: 0 1em;
+        font-style: normal;
+        background: none;
+        box-shadow: none;
+        border-left: 0.25em solid color-mix(in srgb, currentColor 35%, transparent);
+        color: color-mix(in srgb, currentColor 80%, transparent);
+    }
+    .reveal blockquote p:first-child,
+    .reveal blockquote p:last-child {
+        display: block;
+    }
+    /* No stray margins at the top/bottom edges, so vertical centering is exact.
+        */
+    .reveal .slides section > :first-child {
+        margin-top: 0;
+    }
+    .reveal .slides section > :last-child {
+        margin-bottom: 0;
+    }
+    /* Marp `lead` class: centered slide (title slides). Set `state := some
+        "lead"` in a `%%%` block. */
+    .reveal .slides section[data-state~="lead"] {
+        text-align: center;
+    }
+    /* lists also centered, shrink-wrapped box */
+    .reveal .slides section[data-state~="lead"] :is(ul, ol) {
+        display: inline-block;
+        text-align: left;
+    }
+    /* ---- END OF Marp-like layout ---- */
+    /*  */
+    /* Make emphasis more visually distinct from regular text (bold / italic
+        alone): `strong` picks up the accent color, `em` uses different font
+        entirely.
+        */
     .reveal strong,
     .reveal b {
         color: var(--r-accent);
@@ -54,30 +120,16 @@
         font-style: italic;
         font-size: 1.05em;
     }
-    /* `code`-style text
-        (not `.math` inline KaTeX, which shares the same <code> tag):
-        green font color, with a block-outline,
-        same style in headers as in regular text. */
+    /* Inline `code` text (not `.math` inline KaTeX, which shares the same
+        <code> tag): green font color, block-outline, same style in headers as
+        in regular text. */
     .reveal :is(h1, h2, h3, h4, h5, h6, p, li, td, th, blockquote)
         code:not(.math, .block, .block code, pre code, .info-panel code) {
-        /* color: #66bb6a; */
-        /* border-radius: 0.2em;
-        padding: 0.05em 0.15em; */
         color: #81c784;
         background-color: #202020;
-        /* outline: 1px solid currentColor;
-        outline-offset: 0; */
         padding: 0.05em 0.15em;
         border-radius: 0.2em;
-        /* text-decoration: underline;
-        text-decoration-thickness: 0.06em;
-        text-underline-offset: 0.15em;
-        text-decoration-skip-ink: none; */
     }
-    /* .reveal :is(h1, h2, h3, h4, h5, h6, p, li, td, th, blockquote) code:not(.math)::before,
-    .reveal :is(h1, h2, h3, h4, h5, h6, p, li, td, th, blockquote) code:not(.math)::after {
-        content: "`";
-    } */
     .reveal .controls {
         color: var(--r-accent);
         opacity: 0.25;
@@ -95,13 +147,11 @@
         border-radius: 8px;
         opacity: 1;
     }
-    /* Bigger fontsize for ```code blocks```.
-        `!important` is needed because custom.css loads
-        before lib/slides-highlight.css and lib/panel.css, whose
-        rules share the same selector specificity.
-        `.info-panel`
-        is the hover-info side panel shown next to `-panel` Lean
-        blocks. It's a separate element from the code box. */
+    /* Bigger fontsize for ```code blocks```. `!important` is needed because
+        custom.css loads before lib/slides-highlight.css and lib/panel.css,
+        whose rules share the same selector specificity. `.info-panel` is the
+        hover-info side panel shown next to `-panel` Lean blocks. It's a
+        separate element from the code box. */
     .reveal code.hl.lean.block,
     .reveal pre:not(.code-with-panel pre),
     .reveal .info-panel {

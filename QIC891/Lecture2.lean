@@ -20,6 +20,10 @@ open VersoSlides
 
 # $`\mathsf{L∃∀N}`-verified Quantum Information Theory
 
+%%%
+state := some "lead"
+%%%
+
 - _RRS_ to QIC891, Fall 2026
 - Lecture 2, 2026-09-17
 
