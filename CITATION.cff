@@ -22,8 +22,7 @@ authors:
 license: Apache-2.0
 repository-code: "https://github.com/rodolfor-s/lean-quinfo-lectures"
 url: "https://rodolfor-s.github.io/lean-quinfo-lectures/"
-# TODO: Use concept DOI after Zenodo generate it
-# doi: 10.5281/zenodo.XXXXXXX
+doi: 10.5281/zenodo.23200733
 keywords:
   - Lean 4
   - formal verification

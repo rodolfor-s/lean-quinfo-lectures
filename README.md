@@ -1,5 +1,7 @@
 # Lean-verified Quantum Information Theory
 
+[![DOI](https://zenodo.org/badge/1185749195.svg)](https://doi.org/10.5281/zenodo.23200733)
+
 ## Repository
 
 Lean source code for educational demonstration and lecture slides. The lecture course details below are mirrored to the website.
