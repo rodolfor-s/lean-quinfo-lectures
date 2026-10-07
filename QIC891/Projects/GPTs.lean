@@ -1,4 +1,9 @@
 /-
+Copyright (c) 2026 Rodolfo Reis Soldati. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Rodolfo Reis Soldati
+-/
+/-
 Tentative root file for a project on Generalized Probabilistic Theories (GPTs).
 -/
 

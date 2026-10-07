@@ -1,18 +1,20 @@
+/-
+Copyright (c) 2026 Rodolfo Reis Soldati. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Rodolfo Reis Soldati
+-/
 import QIC891.Basic
 
 /-! # Quantum Information in Lean --- Lecture course
--- [the following copies from Lean-QuantumInfo. 19 Mar]
-What follows is a top-level index to some major definitions in this repository,
-in roughly their dependency order:
-  - `Bra` and `Ket` for pure quantum states
-  - `MState` for mixed quantum states
-  - `𝐔[d]`, a notation for unitary matrices
-  - `MEnsemble` and `PEnsemble`: Ensemble of mixed and pure states, respectively
-  - `(mixed_)convex_roof` : (Mixed) convex roof extension
-  - `CPTPMap` for quantum channels
-  - `MState.fidelity`, the fidelity between quantum states
-  - `Sᵥₙ`, `qConditionalEnt`, `qMutualInfo`, `coherentInfo`, etc. - different
-   notions of entropy or information in quantum states
+
+What follows is a top-level index to the content of this repository:
+  - `QIC891/Basic.lean`: demonstrations used during the lectures (Lean's
+    axioms, universes, sets vs. types, equality, structures and classes,
+    function types and the no-cloning theorem)
+  - `QIC891/Lecture1.lean` to `QIC891/Lecture6.lean`: Verso slide decks,
+    compiled into `_slides/` by `Main.lean`
+  - `QIC891/Projects/`: project suggestions, e.g. generalized probabilistic
+    theories in `GPTs.lean`
 -/
 
 /-

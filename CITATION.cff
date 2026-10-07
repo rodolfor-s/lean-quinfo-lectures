@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use these lecture materials, please cite them as below."
+type: software
+title: "Lean-verified Quantum Information Theory: QIC 891 lecture materials"
+abstract: >-
+  Lean 4 source code and Verso slides for the course "Selected Advanced Topics
+  in Quantum Information" (QIC 891, Fall 2026), offered by the Institute for
+  Quantum Computing at the University of Waterloo, and taught at the Perimeter
+  Institute. The lectures
+  introduce formal theorem proving with the Lean 4 programming language, placing
+  emphasis on developing Quantum Information Theory theorems and proofs. Formal
+  proof writing is an increasingly important skill as Quantum Information grows
+  more sophisticated, and as machine-verification tools gain popularity.
+  Participants will learn core theorem-proving syntax, the basics of Lean's own
+  type theory, the notion and use of tactics, and will gain familiarity with the
+  Mathlib and Physlib/QuantumInfo libraries.
+authors:
+  - family-names: Reis Soldati
+    given-names: Rodolfo
+    orcid: "https://orcid.org/0000-0002-1446-1276"
+    affiliation: "Institute for Quantum Computing, University of Waterloo"
+license: Apache-2.0
+repository-code: "https://github.com/rodolfor-s/lean-quinfo-lectures"
+url: "https://rodolfor-s.github.io/lean-quinfo-lectures/"
+# TODO: Use concept DOI after Zenodo generate it
+# doi: 10.5281/zenodo.XXXXXXX
+keywords:
+  - Lean 4
+  - formal verification
+  - interactive theorem proving
+  - quantum information theory
+  - Mathlib
+  - Physlib
+  - lecture notes

@@ -1,0 +1,57 @@
+{
+  "title": "Lean-verified Quantum Information Theory: QIC 891 lecture materials",
+  "upload_type": "software",
+  "description": "<p>Lean 4 source code and Verso slides for the course <em>Selected Advanced Topics in Quantum Information</em> (QIC 891, Fall 2026), offered by the Institute for Quantum Computing at the University of Waterloo, and taught at the Perimeter Institute. The lectures introduce formal theorem proving with the Lean 4 programming language, placing emphasis on developing Quantum Information Theory theorems and proofs. Formal proof writing is an increasingly important skill as Quantum Information grows more sophisticated, and as machine-verification tools gain popularity. Participants will learn core theorem-proving syntax, the basics of Lean's own type theory, the notion and use of tactics, and will gain familiarity with the Mathlib and Physlib/QuantumInfo libraries.</p><p>Topics include propositions as types and the Curry&ndash;Howard correspondence, Lean's axioms, sorts and universes, notions of equality, structures and typeclasses, dependent function types, and a formal statement of the no-cloning theorem.</p><p>The archive contains six lectures (<code>QIC891/Lecture1.lean</code> to <code>QIC891/Lecture6.lean</code>), project suggestions, and the build configuration with a pinned Lean toolchain and dependency manifest. Running <code>lake exe qic891</code> rebuilds the slides.</p>",
+  "creators": [
+    {
+      "name": "Reis Soldati, Rodolfo",
+      "affiliation": "Institute for Quantum Computing, University of Waterloo",
+      "orcid": "0000-0002-1446-1276"
+    }
+  ],
+  "license": "apache-2.0",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "Lean 4",
+    "formal verification",
+    "interactive theorem proving",
+    "quantum information theory",
+    "Mathlib",
+    "Physlib",
+    "lecture notes"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/rodolfor-s/lean-quinfo-lectures",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://pirsa.org/c26033",
+      "relation": "isSupplementTo",
+      "resource_type": "video"
+    },
+    {
+      "identifier": "https://rodolfor-s.github.io/lean-quinfo-lectures/",
+      "relation": "compiles",
+      "resource_type": "lesson"
+    },
+    {
+      "identifier": "https://github.com/leanprover-community/mathlib4",
+      "relation": "requires",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/leanprover-community/physlib",
+      "relation": "requires",
+      "resource_type": "software"
+    },
+    {
+      "identifier": "https://github.com/leanprover/verso-slides",
+      "relation": "requires",
+      "resource_type": "software"
+    }
+  ],
+  "notes": "This repository is built with assistance of Claude Code by Anthropic. Use of AI lies in help with planning, prose editing, HTML and CSS files, and Verso-style markup syntax. Lean code is written by the author with assistance by Claude. AI attribution follows the Leiden Declaration on Artificial Intelligence and Mathematics (https://doi.org/10.5281/zenodo.20302944) and the Linux Kernel AI Coding Assistants guidance page (https://docs.kernel.org/process/coding-assistants.html#attribution)."
+}

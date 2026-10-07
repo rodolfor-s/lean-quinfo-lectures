@@ -1,3 +1,8 @@
+/-
+Copyright (c) 2026 Rodolfo Reis Soldati. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Rodolfo Reis Soldati
+-/
 import VersoSlides
 
 import QIC891.Lecture1 -- so `%doc` below finds the module

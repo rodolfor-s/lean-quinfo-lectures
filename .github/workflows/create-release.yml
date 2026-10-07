@@ -18,5 +18,8 @@ jobs:
     - name: lean-release-tag action
       uses: leanprover-community/lean-release-tag@v1
       with:
-        do-release: true
+        # Create the tag only, without a GitHub release. Zenodo makes a new
+        # DOI version for every GitHub release, so toolchain bumps must not
+        # publish one; course releases are made by hand instead.
+        do-release: false
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
