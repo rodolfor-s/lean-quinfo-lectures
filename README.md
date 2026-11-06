@@ -39,12 +39,19 @@ To build slides locally, run [script `./lake-build-qic891+serve-slides.sh`](./la
   - [Perimeter's calendar page](https://events.perimeterinstitute.ca/event/2604/).
 - Lecture recordings: [PIRSA](https://pirsa.org/c26033).
 - Lecture slides are compiled and deployed to [this Lecture Slides page](https://rodolfor-s.github.io/lean-quinfo-lectures/).
+- Presentation: Tuesday, 10 November 2026, 11am -- 1pm, *Sky Room*. [See details below](#project-presentations).
 
 Researchers of every background are welcomed to join, including non-QI researchers.
 
 [Please see course logistics and administrative information (Piazza, Crowdmark, etc.) in Prof. Debbie Leung's course page](https://www.math.uwaterloo.ca/~wcleung/qic891-f2026.html).
 
-> I also highly recommend checking out the 2nd module on [Entanglement theory for quantum systems described by von Neumann algebras](https://lauritz-van-luijk.github.io/teaching), designed by [Lauritz van Luijk](https://lauritz-van-luijk.github.io/).
+### Project presentations
+
+- Date and time: Tuesday, 10 November 2026, 11am -- 1pm.
+- Location: Perimeter Institute, *Sky Room* (3-394).
+- 20-minute presentations, with ~5 minutes for questions.
+
+I also highly recommend checking out the 2nd module on [Entanglement theory for quantum systems described by von Neumann algebras](https://lauritz-van-luijk.github.io/teaching), designed by [Lauritz van Luijk](https://lauritz-van-luijk.github.io/).
 
 ## Course overview
 
